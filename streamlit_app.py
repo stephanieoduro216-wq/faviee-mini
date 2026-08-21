@@ -1,38 +1,29 @@
 import streamlit as st
-import random
 
-st.set_page_config(page_title="Faviee Mini GH", page_icon="🇬🇭", layout="centered")
+st.set_page_config(page_title="Faviee GH", page_icon="🇬🇭")
 
-st.markdown("""
-<style>
-    .stButton>button {background-color: #CE1126; color: white; border-radius: 20px; font-weight: bold;}
-</style>
-""", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center'>🇬🇭 Faviee Mini GH - Level 5</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align:center;color:#CE1126'>Ghana Pidgin Hype Machine + SWAG! ✨</h3>", unsafe_allow_html=True)
 
-st.title("🇬🇭 Faviee Mini GH - Level 4")
-st.subheader("Ghana Pidgin Hype Machine + Swag!")
-
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([1,3])
 with col1:
-    name = st.text_input("Enter your name:", "Stephanie Oduro")
+    st.image("https://flagcdn.com/w320/gh.png", width=80)
 with col2:
-    vibe = st.selectbox("Choose vibe:", ["Starboy Legend", "Slay Queen", "Big Boss", "Chale Wossop", "Soft Life", "Accra Hottie"])
+    st.link_button("🛍️ Shop on Faviee.com", "https://faviee.com", use_container_width=True)
 
-mood = st.slider("How fresh you dey feel today? (1-10)", 1, 10, 8)
+name = st.text_input("Enter your name:", "Stephanie Oduro")
+vibe = st.selectbox("Choose vibe:", ["Big Boss", "Starboy Legend", "Slay Queen", "Chalewote Fresh"])
+fresh = st.slider("How fresh you dey feel today? (1-10)", 1, 10, 8)
 
-hypes = [
-    f"Chale {name}! You be {vibe}! Ghana to the world! 🇬🇭⭐ Fresh level: {mood}/10!",
-    f"Ei {name}! You too fresh! Kasoa traffic no fit stop your shine! Level {mood} boss!",
-    f"{name} you be {vibe}! You dey burst my mind! 🔥🔥",
-    f"Chale {name}! {vibe} vibes only! Make Ghana proud! You be {mood*10}% star!",
-    f"Herh {name}! You be correct {vibe}! Everybody for Accra dey look you! 👀🇬🇭"
-]
-
-if st.button("Generate Hype! 💥"):
-    st.success(random.choice(hypes))
+if st.button("Generate Hype! 🎉", type="primary", use_container_width=True):
     st.balloons()
     st.snow()
+    hype = f"Chale {name}! You be {vibe}! Ghana to the world! 🇬🇭 Fresh level: {fresh}/10! No size!"
+    st.success(hype)
+    st.markdown(f"**Share your hype:**")
+    wa_text = f"Chale I be {vibe}! Fresh level {fresh}/10 on Faviee Mini GH! 🇬🇭 Check am: https://faviee.com"
+    st.link_button(f"Share '{vibe}' to WhatsApp 💬", f"https://wa.me/?text={wa_text}", use_container_width=True)
+    st.image("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500", caption="Faviee Drip - Ghana Made 🇬🇭")
 
-st.markdown("---")
-st.caption("Built in Accra GH 🇬🇭 | Level 4 - Styled by Stephanie")
-st.link_button("Visit Faviee.com 🛍️", "https://faviee.com")
+st.divider()
+st.caption("Built in Accra GH 🇬🇭 | Powered by Faviee | Level 5 - Final Boss Complete 👑")
